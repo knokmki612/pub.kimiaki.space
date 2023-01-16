@@ -1,6 +1,6 @@
 export default {
-  fetch(request) {
-    const proxyRequest = new Request(new URL(request.url, PROXY_URL_BASE), {
+  fetch(request, env) {
+    const proxyRequest = new Request(new URL(request.url, env.PROXY_URL_BASE), {
       body: request.body,
       headers: request.headers,
       method: request.method,
