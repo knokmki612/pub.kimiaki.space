@@ -1,7 +1,7 @@
 export default {
   fetch(request, env) {
     const url = new URL(request.url);
-    url.hostname = env.PROXY_URL_BASE;
+    url.hostname = env.TARGET_URL_HOSTNAME;
     return fetch(url.toString(), request);
   },
 };
