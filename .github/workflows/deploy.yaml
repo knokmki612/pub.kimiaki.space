@@ -12,4 +12,8 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: worker
+          secrets: |
+            PROXY_URL_BASE
           command: publish index.js --name gts --compatibility-date 2023-01-16
+        env:
+          REDIRECT_URL_BASE: ${{ secrets.PROXY_URL_BASE }}
