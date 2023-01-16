@@ -10,7 +10,7 @@ steps:
       [
         "run",
         "deploy",
-        "$REPO_NAME",
+        "gts",
         "--image",
         "gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA",
         "--set-env-vars",
