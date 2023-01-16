@@ -1,11 +1,7 @@
 export default {
   fetch(request, env) {
-    const proxyRequest = new Request(new URL(request.url, env.PROXY_URL_BASE), {
-      body: request.body,
-      headers: request.headers,
-      method: request.method,
-      redirect: request.redirect,
-    });
-    return fetch(proxyRequest);
+    const url = new URL(request.url);
+    url.hostname = env.PROXY_URL_BASE;
+    return fetch(url.toString(), request);
   },
 };
