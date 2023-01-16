@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - worker/**
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: worker
+          command: publish index.js --name gts --compatibility-date 2023-01-16

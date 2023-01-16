@@ -1,0 +1,4 @@
+# See https://docs.gotosocial.org/en/latest/configuration/
+db-type: sqlite
+storage-backend: s3
+accounts-registration-open: false
