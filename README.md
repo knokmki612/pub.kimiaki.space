@@ -43,7 +43,7 @@ Running [GoToSocial](https://github.com/superseriousbusiness/gotosocial) on [Clo
 5. Run `docker build -t gts .`
 6. Run `docker run --rm -p 8080:8080 gts`
 7. Run `docker exec -it gts sh`
-8. Doing some https://docs.gotosocial.org/en/latest/installation_guide/binary/#5-create-your-user
+8. Do something like https://docs.gotosocial.org/en/latest/installation_guide/binary/#5-create-your-user
 
 ## FAQ
 
