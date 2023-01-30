@@ -41,8 +41,8 @@ Running [GoToSocial](https://github.com/superseriousbusiness/gotosocial) on [Clo
 3. Append the .env with `LITESTREAM_GCS_SECRET_BASE64=<base64 encoded service account key>`
 4. Remove the Cloud Run service named "gts" if already it run
 5. Run `docker build -t gts .`
-6. Run `docker run --rm -p 8080:8080 gts`
-7. Run `docker exec -it gts sh`
+6. Run `docker run --rm -p 8080:8080 --env-file=.env gts`
+7. Run `docker exec -it <container id> sh`
 8. Do something like https://docs.gotosocial.org/en/latest/installation_guide/binary/#5-create-your-user
 
 ## FAQ
