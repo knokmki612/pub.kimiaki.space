@@ -22,7 +22,7 @@ Running [GoToSocial](https://github.com/superseriousbusiness/gotosocial) on [Clo
 4. [Setup Cloud Run](https://cloud.google.com/run/docs/setup)
 5. Setup [Building repositories from GitHub](https://cloud.google.com/build/docs/automating-builds/github/build-repos-from-github)
 6. [Create a Cloud Build trigger](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
-    - Apply IAM roles as follows:
+    - Apply the following IAM roles:
         - Cloud Build Service Account
         - Service Account User
         - Cloud Run Admin
@@ -36,7 +36,7 @@ Running [GoToSocial](https://github.com/superseriousbusiness/gotosocial) on [Clo
 
 1. Place a .env to project root
 2. [Create service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)
-    - Apply IAM roles as follows:
+    - Apply the following IAM roles:
         - Storage Object Admin
 3. Append the .env with `LITESTREAM_GCS_SECRET_BASE64=<base64 encoded service account key>`
 4. Remove the Cloud Run service named "gts" if already it run
