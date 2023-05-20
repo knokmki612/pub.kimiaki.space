@@ -19,18 +19,19 @@ Running [GoToSocial](https://github.com/superseriousbusiness/gotosocial) on [Clo
 1. [Create a Google Cloud Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 2. [Enable billing for a project](https://cloud.google.com/billing/docs/how-to/modify-project)
 3. [Create buckets](https://cloud.google.com/storage/docs/creating-buckets)
-4. [Setup Cloud Run](https://cloud.google.com/run/docs/setup)
-5. Setup [Building repositories from GitHub](https://cloud.google.com/build/docs/automating-builds/github/build-repos-from-github)
-6. [Create a Cloud Build trigger](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
+4. [Setup Artifact Registry](https://cloud.google.com/artifact-registry/docs/docker/store-docker-container-images)
+5. [Setup Cloud Run](https://cloud.google.com/run/docs/setup)
+6. Setup [Building repositories from GitHub](https://cloud.google.com/build/docs/automating-builds/github/build-repos-from-github)
+7. [Create a Cloud Build trigger](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
     - Apply the following IAM roles:
         - Cloud Build Service Account
         - Service Account User
         - Cloud Run Admin
     - Prepare a storage bucket used by `GTS_STORAGE_S3_*`
-6. Setup [substitution variables](https://cloud.google.com/build/docs/configuring-builds/substitute-variable-values) and [secrets](https://cloud.google.com/build/docs/securing-builds/use-secrets)
+8. Setup [substitution variables](https://cloud.google.com/build/docs/configuring-builds/substitute-variable-values) and [secrets](https://cloud.google.com/build/docs/securing-builds/use-secrets)
     - See [cloudbuild.yaml](./cloudbuild.yaml)
-6. Trigger the Cloud Build trigger
-7. [Mapping custom domains](https://cloud.google.com/run/docs/mapping-custom-domains) to the Cloud Run service named "gts"
+9. Trigger the Cloud Build trigger
+10. [Mapping custom domains](https://cloud.google.com/run/docs/mapping-custom-domains) to the Cloud Run service named "gts"
 
 ### Local
 
