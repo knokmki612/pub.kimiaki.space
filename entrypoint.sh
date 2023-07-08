@@ -23,4 +23,4 @@ else
   ./litestream restore -config ./litestream.yaml -v -if-replica-exists "$GTS_DB_ADDRESS"
 fi
 
-exec ./litestream replicate -config ./litestream.yaml -exec "./gotosocial --config-path ./config.yaml server start"
+exec ./litestream replicate -config ./litestream.yaml -exec "./gotosocial --config-path ./config.yaml $@"

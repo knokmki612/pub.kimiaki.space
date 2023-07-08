@@ -5,3 +5,4 @@ COPY ./gts.yaml /gotosocial/config.yaml
 COPY ./entrypoint.sh /gotosocial/entrypoint.sh
 ENV GTS_DB_ADDRESS=/gotosocial/sqlite.db
 ENTRYPOINT ["/gotosocial/entrypoint.sh"]
+CMD ["server", "start"]
