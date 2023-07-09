@@ -9,14 +9,14 @@
 
 ### Usage
 
-1. Place a .env to project root
+1. Place a .env to this directory
 2. [Create service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)
     - Apply the following IAM roles:
         - Storage Object Admin
 3. Append the .env with `LITESTREAM_GCS_SECRET_BASE64=<base64 encoded service account key>`
 4. Remove the Cloud Run service named "gts" if already it run
 5. Run `docker build -t db-only .`
-6. Run `docker run --rm -v $(pwd):/workdir/output --env-file=.env -it db-only`
+6. Run `docker run --rm -v $(pwd):/workdir/output --env-file .env -it db-only`
 
 ```shell
 # Backup
