@@ -27,6 +27,6 @@ sqlite3 output/gts_202307082341.db '.dump' > output/gts_dump_202307082341.sql
 sqlite3 output/gts_202307082341.db '.recover' > output/gts_recover_202307082341.sql
 # Replace (Beforehand delete entire GCS object)
 rm sqlite.db
-sqlite3 sqlite.db < output/gts_dump_202307082341.db
+sqlite3 sqlite.db < output/gts_dump_202307082341.sql
 ./litestream replicate -config ./litestream.yaml
 ```
