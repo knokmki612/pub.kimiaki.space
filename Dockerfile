@@ -1,5 +1,5 @@
 FROM litestream/litestream:0.3.9 as litestream
-FROM superseriousbusiness/gotosocial:0.9.0
+FROM superseriousbusiness/gotosocial:0.10.0
 COPY --from=litestream /usr/local/bin/litestream /gotosocial/litestream
 COPY ./gts.yaml /gotosocial/config.yaml
 COPY ./entrypoint.sh /gotosocial/entrypoint.sh
