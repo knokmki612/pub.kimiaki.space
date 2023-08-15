@@ -1,4 +1,4 @@
-FROM litestream/litestream:0.3.9 as litestream
+FROM litestream/litestream:0.3.11 as litestream
 FROM debian:bookworm-slim
 
 WORKDIR /workdir

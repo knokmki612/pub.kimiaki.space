@@ -1,4 +1,4 @@
-FROM litestream/litestream:0.3.9 as litestream
+FROM litestream/litestream:0.3.11 as litestream
 FROM superseriousbusiness/gotosocial:0.11.0
 COPY --from=litestream /usr/local/bin/litestream /gotosocial/litestream
 COPY ./gts.yaml /gotosocial/config.yaml
