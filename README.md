@@ -52,4 +52,4 @@ Running [GoToSocial](https://github.com/superseriousbusiness/gotosocial) on [Clo
 
 As far as I know, you can't. Please following the local deployment steps.
 
-Or [create Cloud Run jobs](https://cloud.google.com/run/docs/create-jobs?) with same container image but change [command](https://cloud.google.com/sdk/gcloud/reference/run/jobs/create#--command) or [args](https://cloud.google.com/sdk/gcloud/reference/run/jobs/create#--args). Please keep in mind you still need to stop the Cloud Run Instance this way.
+Or [create Cloud Run jobs](https://cloud.google.com/run/docs/create-jobs?) with same container image but change [command](https://cloud.google.com/sdk/gcloud/reference/run/jobs/create#--command) or [args](https://cloud.google.com/sdk/gcloud/reference/run/jobs/create#--args).
