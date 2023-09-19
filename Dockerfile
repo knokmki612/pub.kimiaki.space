@@ -1,8 +1,7 @@
-FROM litestream/litestream:0.3.11 as litestream
+FROM curlimages/curl:8.3.0 as cert
+ARG DB_TLS_CA_CERT_URL
 FROM superseriousbusiness/gotosocial:0.11.1
-COPY --from=litestream /usr/local/bin/litestream /gotosocial/litestream
 COPY ./gts.yaml /gotosocial/config.yaml
 COPY ./entrypoint.sh /gotosocial/entrypoint.sh
-ENV GTS_DB_ADDRESS=/gotosocial/sqlite.db
 ENTRYPOINT ["/gotosocial/entrypoint.sh"]
 CMD ["server", "start"]

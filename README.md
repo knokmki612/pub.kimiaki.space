@@ -1,18 +1,23 @@
 # pub.kimiaki.space
 
-Running [GoToSocial](https://github.com/superseriousbusiness/gotosocial) on [Cloud Run](https://cloud.google.com/run) (via [Litestream](https://litestream.io/)) with [Cloud Storage](https://cloud.google.com/storage) and [Cloudflare R2](https://www.cloudflare.com/products/r2/).
+Running [GoToSocial](https://github.com/superseriousbusiness/gotosocial) on [Cloud Run](https://cloud.google.com/run).
 
-## Environment Variables
+## Environment or Substitution Variables
 
 | Name | Description |
 | :-- | :-- |
 | GTS_HOST | See https://docs.gotosocial.org/en/latest/configuration/general/ , required |
+| GTS_DB_ADDRESS | See https://docs.gotosocial.org/en/latest/configuration/database/, required |
+| GTS_DB_PORT | See https://docs.gotosocial.org/en/latest/configuration/database/, required |
+| GTS_DB_USER | See https://docs.gotosocial.org/en/latest/configuration/database/, required |
+| GTS_DB_DATABASE | See https://docs.gotosocial.org/en/latest/configuration/database/, required |
+| GTS_DB_PASSWORD | See https://docs.gotosocial.org/en/latest/configuration/database/, required |
 | GTS_STORAGE_S3_ENDPOINT | See https://docs.gotosocial.org/en/latest/configuration/storage/ , required |
 | GTS_STORAGE_S3_BUCKET | See https://docs.gotosocial.org/en/latest/configuration/storage/ , required |
 | GTS_STORAGE_S3_ACCESS_KEY | See https://docs.gotosocial.org/en/latest/configuration/storage/ , required |
 | GTS_STORAGE_S3_SECRET_KEY | See https://docs.gotosocial.org/en/latest/configuration/storage/ , required |
-| LITESTREAM_GCS_BUCKET | GCS bucket name used by sqlite replication, required |
-| LITESTREAM_GCS_SECRET_BASE64 | Base64 encoded Service account key, see also https://cloud.google.com/iam/docs/creating-managing-service-account-keys , optional |
+| REGION | Region of Cloud Run Instances, required |
+| IMAGE_NAME | Image name of docker image, required |
 
 ## Deployment
 
@@ -36,15 +41,10 @@ Running [GoToSocial](https://github.com/superseriousbusiness/gotosocial) on [Clo
 ### Local
 
 1. Place a .env to project root
-2. [Create service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)
-    - Apply the following IAM roles:
-        - Storage Object Admin
-3. Append the .env with `LITESTREAM_GCS_SECRET_BASE64=<base64 encoded service account key>`
-4. Remove the Cloud Run service named "gts" if already it run
-5. Run `docker build -t gts .`
-6. Run `docker run --rm -p 8080:8080 --env-file=.env gts`
-7. Run `docker exec -it <container id> sh`
-8. Do something like https://docs.gotosocial.org/en/latest/getting_started/user_creation/
+2. Run `docker build -t gts .`
+3. Run `docker run --rm -p 8080:8080 --env-file=.env gts`
+4. Run `docker exec -it <container id> sh`
+5. Do something like https://docs.gotosocial.org/en/latest/getting_started/user_creation/
 
 ## FAQ
 
@@ -53,7 +53,3 @@ Running [GoToSocial](https://github.com/superseriousbusiness/gotosocial) on [Clo
 As far as I know, you can't. Please following the local deployment steps.
 
 Or [create Cloud Run jobs](https://cloud.google.com/run/docs/create-jobs?) with same container image but change [command](https://cloud.google.com/sdk/gcloud/reference/run/jobs/create#--command) or [args](https://cloud.google.com/sdk/gcloud/reference/run/jobs/create#--args). Please keep in mind you still need to stop the Cloud Run Instance this way.
-
-### Can I use the other S3 compatible object storage instead of R2?
-
-Yes you can.

@@ -1,4 +1,4 @@
 # See https://docs.gotosocial.org/en/latest/configuration/
-db-type: sqlite
+db-tls-mode: require
 storage-backend: s3
 accounts-registration-open: false
