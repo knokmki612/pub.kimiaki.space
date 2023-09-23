@@ -5,6 +5,8 @@ steps:
         "build",
         "-t",
         "$_IMAGE_NAME:$COMMIT_SHA",
+        "--build-arg",
+        "DB_TLS_CA_CERT_URL=$_DB_TLS_CA_CERT_URL",
         "."
       ]
   - name: "gcr.io/cloud-builders/docker"
