@@ -1,4 +1,4 @@
-FROM superseriousbusiness/gotosocial:0.12.1
+FROM superseriousbusiness/gotosocial:0.13.0
 COPY ./gts.yaml /gotosocial/config.yaml
 COPY ./entrypoint.sh /gotosocial/entrypoint.sh
 ENTRYPOINT ["/gotosocial/entrypoint.sh"]
